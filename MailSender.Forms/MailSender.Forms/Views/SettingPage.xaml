@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MailSender.Forms.Views.SettingPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ActivityIndicator
+                           IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           Color="Black" />
+            <Label Text="SmtpServerAddress:" HorizontalOptions="StartAndExpand" />
+            <Editor Text="{Binding SmtpServerAddress}" FontSize="Small"></Editor>
+
+            <Label Text="SmtpServerPort:" HorizontalOptions="StartAndExpand" />
+            <Editor Text="{Binding SmtpServerPort}" FontSize="Small"></Editor>
+
+            <Label Text="SendFrom:" HorizontalOptions="StartAndExpand" />
+            <Editor Text="{Binding SendFrom}" FontSize="Small"></Editor>
+
+            <Label Text="UserPass:" HorizontalOptions="StartAndExpand" />
+            <Entry IsPassword="True" Text="{Binding UserPass}" FontSize="Small"></Entry>
+
+            <Label Text="MaxSendQueueCount:" HorizontalOptions="StartAndExpand" />
+            <Editor Text="{Binding MaxSendQueueCount}" FontSize="Small"></Editor>
+
+            <Label Text="MaxSize In Byte:" HorizontalOptions="StartAndExpand" />
+            <Editor Text="{Binding MaxSize}" FontSize="Small"></Editor>
+
+            <Label Text="Default Send To:" HorizontalOptions="StartAndExpand" />
+            <Editor Text="{Binding SendToAddress}" FontSize="Small"></Editor>
+
+            <Button Text="Save" Command="{Binding DownloadAndSend}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

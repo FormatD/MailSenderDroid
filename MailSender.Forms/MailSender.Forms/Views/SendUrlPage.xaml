@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MailSender.Forms.Views.SendUrlPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ActivityIndicator
+                           IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           Color="Black" />
+            <Label Text="Url to download:"                
+                HorizontalOptions="StartAndExpand" />
+            <Editor Text="{Binding Url}" FontSize="Small"></Editor>
+            <Label Text="File Name:"
+                HorizontalOptions="StartAndExpand" />
+            <Editor Text="{Binding FileName}" FontSize="Small"></Editor>
+            <Label Text="Send To:"
+                HorizontalOptions="StartAndExpand" />
+            <Editor Text="{Binding SendToAddress}" FontSize="Small"></Editor>
+
+            <Button Text="Download And Send" Command="{Binding DownloadAndSend}"/>
+            <Button Text="View Progress" Command="{Binding ViewProgress}"/>
+            <ScrollView>
+                <StackLayout>
+                    <Label Text="Logs:"
+                HorizontalOptions="StartAndExpand" />
+                    <Label Text="{Binding LogContent}"
+                HorizontalOptions="StartAndExpand" />
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
